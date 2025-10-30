@@ -1,4 +1,3 @@
-
 import React from 'react';
 import type { InventoryItem } from '../types';
 import { StockStatus } from '../types';
@@ -31,36 +30,36 @@ const InventoryItemCard: React.FC<InventoryItemCardProps> = ({ item, onEdit, onD
     };
 
     return (
-        <div className={`bg-white rounded-lg shadow-md p-5 flex flex-col justify-between border-l-4 ${status === StockStatus.OutOfStock ? 'border-red-500' : status === StockStatus.LowStock ? 'border-yellow-500' : 'border-green-500'}`}>
+        <div className={`bg-white rounded-lg shadow-md p-4 flex flex-col justify-between border-l-4 ${status === StockStatus.OutOfStock ? 'border-red-500' : status === StockStatus.LowStock ? 'border-yellow-500' : 'border-green-500'}`}>
             <div>
                 <div className="flex justify-between items-start">
-                    <h3 className="text-xl font-bold text-gray-800 break-words">{item.name}</h3>
+                    <h3 className="text-lg font-bold text-gray-800 break-words">{item.name}</h3>
                     <div className={`text-xs font-bold px-2.5 py-1 rounded-full ${color}`}>
                         {label}
                     </div>
                 </div>
                 
-                <div className="mt-4 text-gray-600">
-                    <p className="text-3xl font-mono text-center my-4">
+                <div className="mt-3 text-gray-600">
+                    <p className="text-2xl font-mono text-center my-3">
                         <span className="font-bold">{item.quantity}</span>
-                        <span className="text-lg ml-2">{item.unit}</span>
+                        <span className="text-base ml-1">{item.unit}</span>
                     </p>
                     <div className="text-sm text-center text-gray-500">
                         부족 기준: {item.lowStockThreshold} {item.unit}
                     </div>
                 </div>
 
-                <div className="flex items-center justify-center gap-2 mt-4">
+                <div className="flex items-center justify-center gap-2 mt-3">
                     <button
                         onClick={() => handleQuantityChange(-1)}
-                        className="w-10 h-10 bg-gray-200 text-gray-700 rounded-full flex items-center justify-center text-lg font-bold hover:bg-gray-300 transition"
+                        className="w-9 h-9 bg-gray-200 text-gray-700 rounded-full flex items-center justify-center text-lg font-bold hover:bg-gray-300 transition"
                         aria-label="재고 감소"
                     >
                         -
                     </button>
                     <button
                         onClick={() => handleQuantityChange(1)}
-                        className="w-10 h-10 bg-gray-200 text-gray-700 rounded-full flex items-center justify-center text-lg font-bold hover:bg-gray-300 transition"
+                        className="w-9 h-9 bg-gray-200 text-gray-700 rounded-full flex items-center justify-center text-lg font-bold hover:bg-gray-300 transition"
                         aria-label="재고 증가"
                     >
                         +
@@ -72,7 +71,7 @@ const InventoryItemCard: React.FC<InventoryItemCardProps> = ({ item, onEdit, onD
                 </div>
             </div>
 
-            <div className="flex justify-end items-center gap-2 mt-5 pt-4 border-t border-gray-200">
+            <div className="flex justify-end items-center gap-2 mt-4 pt-3 border-t border-gray-200">
                 <button
                     onClick={() => onEdit(item)}
                     className="p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-100 rounded-full transition"

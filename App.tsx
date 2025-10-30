@@ -3,7 +3,6 @@ import React, { useState, useMemo, useCallback } from 'react';
 import { useInventory } from './hooks/useInventory';
 import type { InventoryItem, FilterType, InventoryItemData } from './types';
 import Header from './components/Header';
-import Dashboard from './components/Dashboard';
 import FilterControls from './components/FilterControls';
 import InventoryList from './components/InventoryList';
 import ItemFormModal from './components/ItemFormModal';
@@ -64,8 +63,7 @@ const App: React.FC = () => {
         <div className="min-h-screen bg-gray-50 font-sans">
             <Header />
             <main className="container mx-auto p-4 md:p-6 lg:p-8">
-                <Dashboard inventory={inventory} />
-                <div className="mt-8 bg-white p-4 sm:p-6 rounded-xl shadow-lg">
+                <div className="bg-white p-4 sm:p-6 rounded-xl shadow-lg">
                   <FilterControls
                       searchTerm={searchTerm}
                       setSearchTerm={setSearchTerm}
